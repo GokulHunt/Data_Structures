@@ -115,7 +115,7 @@ class linked_list:
             list_val = ele.next.val
             if list_val == val:
                ele.next = ele.next.next
-            
+               break
             ele = ele.next
             
 
