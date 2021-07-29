@@ -10,9 +10,12 @@ class Node:
         self.val = val
         self.next = next
     
+    
+    
 class linked_list:
     def __init__(self):
         self.head = None
+    
     
     def __str__(self):
         if self.head == None:
@@ -25,6 +28,7 @@ class linked_list:
                 ele = ele.next                
             return(llstr)
     
+    
     def __len__(self):
         count = 0
         ele = self.head
@@ -34,9 +38,11 @@ class linked_list:
             
         return count
     
+    
     def insert_at_beginning(self, val):
         node = Node(val, self.head)
         self.head = node
+    
     
     def insert_at_end(self, val):
         ele = self.head
@@ -47,6 +53,7 @@ class linked_list:
             while ele.next:
                 ele = ele.next            
             ele.next = Node(val, None)
+         
             
     def insert_at_position(self, idx, val):
         if idx < 0 or idx > self.__len__():
@@ -66,7 +73,23 @@ class linked_list:
                 
                 ele = ele.next
                 count += 1
-                
+
+
+    def insert_after_value(self, val_after, val_to_insert):
+        ele = self.head
+        while ele:
+            if ele.val == val_after:
+                node = Node(val_to_insert, ele.next)
+                ele.next = node
+                break
+            ele = ele.next
+
+
+    def insert_multiple_values(self, list_of_values):
+        for val in list_of_values:
+            self.insert_at_end(val)
+      
+            
     def remove_at_position(self, idx):
         if idx < 0 or idx >= self.__len__():
             raise IndexError("Invalid Index")
@@ -84,12 +107,19 @@ class linked_list:
             
             ele = ele.next
             count += 1
+    
+    
+    def remove_by_value(self, val):
+        ele = self.head
+        while ele.next:
+            list_val = ele.next.val
+            if list_val == val:
+               ele.next = ele.next.next
             
-    def insert_multiple_values(self, list_of_values):
-        for val in list_of_values:
-            self.insert_at_end(val)
+            ele = ele.next
+            
 
-
+        
 if __name__ == '__main__':
     l = linked_list()
     l.insert_at_beginning(5)
@@ -101,4 +131,8 @@ if __name__ == '__main__':
     l.remove_at_position(5)
     l.remove_at_position(4)
     print(l)
-    len(l)
+    print(len(l))
+    l.insert_after_value(':P', 'XD')
+    l.remove_by_value(100)
+    l.remove_by_value(':P')    
+    print(l)
