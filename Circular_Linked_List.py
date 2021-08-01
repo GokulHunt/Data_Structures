@@ -49,16 +49,23 @@ class CircularLinkedList:
             #And the next of new node corresponds to head
             ele.next = node
      
-     
+    def __len__(self):
+        ele = self.head
+        count = 0
+        while ele:
+            count += 1
+            if ele.next == self.head:
+                break
+            ele = ele.next
+        return count            
+        
     # Function to print nodes in a given circular linked list
     def printList(self):
         ele = self.head
         cllstr = ''
         while ele:
-            if ele.next != self.head:
-                cllstr += str(ele.val)+'-->'
-            else:
-                cllstr += str(ele.val)
+            cllstr += str(ele.val)+'-->'
+            if ele.next == self.head:
                 break
             ele = ele.next
         print(cllstr)
@@ -77,3 +84,4 @@ cllist.prepend(11)
  
 print ("Contents of circular Linked List")
 cllist.printList()
+print(len(cllist))
