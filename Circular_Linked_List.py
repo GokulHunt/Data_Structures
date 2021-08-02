@@ -119,34 +119,35 @@ class CircularLinkedList:
                         break
                     ele = ele.next                                           
 
-  
-# Initialize list as empty
-cllist = CircularLinkedList()
- 
-# Created linked list will be 11->2->56->12
-cllist.append(12)
-cllist.append(56)
-#cllist.append(2)
-cllist.prepend(11)
-cllist.prepend('XD')
-cllist.prepend('Century')
-cllist.append(['a', 'b', 'c'])
 
-
-cllist.remove('Century')
-cllist.remove(56)
-cllist.remove(['a', 'b', 'c'])
-cllist.remove(12)
-cllist.remove(11)
-cllist.remove(19)
-cllist.remove('XD')
-
-print ("Contents of circular Linked List")
-cllist.printList()
-print('\n')
-
-print("Length of the list:")
-print(len(cllist))
-print('\n')
-
-cllist.split_list()
+if __name__ == '__main__':
+    # Initialize list as empty
+    cllist = CircularLinkedList()
+     
+    # Created linked list will be 11->2->56->12
+    cllist.append(12)
+    cllist.append(56)
+    #cllist.append(2)
+    cllist.prepend(11)
+    cllist.prepend('XD')
+    cllist.prepend('Century')
+    cllist.append(['a', 'b', 'c'])
+    
+    
+    cllist.remove('Century')
+    cllist.remove(56)
+    cllist.remove(['a', 'b', 'c'])
+    cllist.remove(12)
+    cllist.remove(11)
+    cllist.remove(19)
+    cllist.remove('XD')
+    
+    print ("Contents of circular Linked List")
+    cllist.printList()
+    print('\n')
+    
+    print("Length of the list:")
+    print(len(cllist))
+    print('\n')
+    
+    cllist.split_list()
