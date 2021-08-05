@@ -5,9 +5,9 @@ Created on Mon Aug  2 16:22:20 2021
 @author: gokul
 """
 
-#Implementation of Class Data Structure using Python
+#Implementation of Stack Data Structure using Python
 class Stack:
-    #Constructor to create an empty class
+    #Constructor to create an empty Stack
     def __init__(self):
         self.items = []
     
